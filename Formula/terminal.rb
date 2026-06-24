@@ -5,8 +5,9 @@ class Terminal < Formula
   sha256 "1be2ba47e5d64dbab8b7364ae82af604e4c99593c780756fb6d9ac8c4bdc1e5f"
   license "MIT"
 
-  # macOS 13+; builds from source (no Gatekeeper quarantine, no notarization needed).
-  depends_on macos: ">= :ventura"
+  # Builds from source (no Gatekeeper quarantine, no notarization). Swift package targets
+  # macOS 13+, which is enforced at build time.
+  depends_on :macos
 
   def install
     # SwiftPM needs --disable-sandbox inside Homebrew's build sandbox; bundle.sh reads this.
