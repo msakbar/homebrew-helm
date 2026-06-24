@@ -1,4 +1,4 @@
-class HelmTerminal < Formula
+class Terminal < Formula
   desc "Menu-bar dashboard for your Terminal windows"
   homepage "https://github.com/msakbar/helm-terminal"
   url "https://github.com/msakbar/helm-terminal/archive/refs/tags/v0.1.0.tar.gz"
@@ -26,7 +26,7 @@ class HelmTerminal < Formula
       On first run, approve the prompt to let Helm control Terminal
       (or enable it under System Settings ▸ Privacy & Security ▸ Automation ▸ Helm ▸ Terminal).
 
-      Update later with:  brew upgrade helm-terminal
+      Update later with:  brew upgrade terminal
     EOS
   end
 
