@@ -15,16 +15,13 @@ class Terminal < Formula
     system "bash", "scripts/bundle.sh", "#{prefix}/Helm.app"
   end
 
-  def post_install
-    # Surface Helm in /Applications & Spotlight so it's one command to a running app.
-    # Never clobbers an existing app or symlink there.
-    target = Pathname.new("/Applications/Helm.app")
-    target.make_symlink(opt_prefix/"Helm.app") unless target.exist? || target.symlink?
-  end
-
   def caveats
     <<~EOS
-      Helm is linked into /Applications — launch it from Spotlight or:
+      Helm.app is installed at:
+        #{opt_prefix}/Helm.app
+
+      Link it into /Applications (so it shows in Spotlight), then open it:
+        ln -sf #{opt_prefix}/Helm.app /Applications/Helm.app
         open /Applications/Helm.app
 
       On first run, approve the prompt to let Helm control Terminal
