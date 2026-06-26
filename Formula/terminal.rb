@@ -17,12 +17,11 @@ class Terminal < Formula
 
   def caveats
     <<~EOS
-      Helm.app is installed at:
-        #{opt_prefix}/Helm.app
+      One more step — link Helm into /Applications and open it:
+        ln -sf #{opt_prefix}/Helm.app /Applications/Helm.app && open /Applications/Helm.app
 
-      Link it into /Applications (so it shows in Spotlight), then open it:
-        ln -sf #{opt_prefix}/Helm.app /Applications/Helm.app
-        open /Applications/Helm.app
+      (Homebrew can't write to /Applications from a formula, so this one line finishes it.
+      If you asked an AI agent to install Helm, it'll run this for you.)
 
       On first run, approve the prompt to let Helm control Terminal
       (or enable it under System Settings ▸ Privacy & Security ▸ Automation ▸ Helm ▸ Terminal).
